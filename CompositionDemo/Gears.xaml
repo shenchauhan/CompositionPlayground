@@ -1,0 +1,25 @@
+﻿<Page
+    x:Class="CompositionDemo.Gears"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CompositionDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name ="Root" Background="#36454F">
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="AnimateSlow" Click="AnimateSlow_Click" Background="White" Width="80"  VerticalAlignment="Top" Margin="10,10,0,0">Slow</Button>
+            <Button x:Name="AnimateFast" Click="AnimateFast_Click" Background="White" Width="80"  VerticalAlignment="Top" Margin="10,10,0,0">Fast</Button>
+            <Button x:Name="Stop" Click="Stop_Click" Background="White" Width="80"  VerticalAlignment="Top" Margin="10,10,0,0">Stop</Button>
+            <Button x:Name="Reverse" Click="Reverse_Click" Background="White" Width="80" VerticalAlignment="Top" Margin="10,10,0,0">Reverse</Button>
+            <Button x:Name="AddGearButton" Click="AddGear_Click" Background="White" Width="80" VerticalAlignment="Top" Margin="10,10,0,0">Add Gear</Button>
+            <TextBox x:Name="NumberOfGears" Width="200" Margin="10" VerticalAlignment="Top" />
+            <Button x:Name="AddXGearsButton" Width="110" Margin="10" VerticalAlignment="Top" Background="White" Content="Add X Gears" Click="AddXGearsButton_Click" />
+            <TextBlock x:Name="GearCount" Text="{x:Bind Count, Mode=OneWay}" FontSize="20" Margin="10,10,0,0" Foreground="White" />
+        </StackPanel>
+        <Canvas x:Name="Container" Margin="50,130,0,0" >
+            <Image x:Name="FirstGear" Source="ms-appx:///Assets/FirstGear.png" Width="100" Height="100"/>
+        </Canvas>
+    </Grid>
+</Page>

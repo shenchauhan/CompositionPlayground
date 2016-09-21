@@ -1,0 +1,16 @@
+﻿<Page
+    x:Class="CompositionDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CompositionDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    Background="White"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button Content="Gears" Tag="Gears" Click="Button_Click" Margin="50" FontSize="32" HorizontalAlignment="Center"/>
+        <Button Content="Lighting" Tag="Lighting" Click="Button_Click" Margin="50" FontSize="32" HorizontalAlignment="Center"/>
+        <Button Content="Blur" Tag="Blur" Click="Button_Click" Margin="50" FontSize="32" HorizontalAlignment="Center"/>
+    </StackPanel>
+</Page>
