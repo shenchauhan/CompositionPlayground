@@ -188,6 +188,14 @@ namespace CompositionDemo
             _gearVisuals.First().StartAnimation("RotationAngleInDegrees", _gearMotionScalarAnimation);
         }
 
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            if (Frame.CanGoBack)
+            {
+                Frame.GoBack();
+            }
+        }
+
         private void AddXGearsButton_Click(object sender, RoutedEventArgs e)
         {
             int gearsToAdd;

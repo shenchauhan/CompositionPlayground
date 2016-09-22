@@ -108,5 +108,13 @@ namespace CompositionDemo
 
             ElementCompositionPreview.SetElementChildVisual(Image, sprite);
         }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            if (Frame.CanGoBack)
+            {
+                Frame.GoBack();
+            }
+        }
     }
 }

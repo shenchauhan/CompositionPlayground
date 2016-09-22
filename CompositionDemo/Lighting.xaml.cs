@@ -98,5 +98,13 @@ namespace CompositionDemo
             var offset = e.GetCurrentPoint(this).Position.ToVector2();
             _pointLight.Offset = new Vector3(offset.X, offset.Y, 75);
         }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            if (Frame.CanGoBack)
+            {
+                Frame.GoBack();
+            }
+        }
     }
 }
