@@ -34,7 +34,6 @@ namespace CompositionDemo
         private Compositor _compositor;
         private Visual _visual;
         private CompositionEffectFactory _effectFactory;
-        private CompositionSurfaceBrush _flatNormalsBrush;
         private PointLight _pointLight;
 
         public Lighting()
