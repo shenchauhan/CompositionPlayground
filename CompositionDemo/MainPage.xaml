@@ -9,8 +9,8 @@
     mc:Ignorable="d">
 
     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button Content="Gears" Tag="Gears" Click="Button_Click" Margin="40" FontSize="32" HorizontalAlignment="Center"/>
-        <Button Content="Lighting" Tag="Lighting" Click="Button_Click" Margin="40" FontSize="32" HorizontalAlignment="Center"/>
-        <Button Content="Blur (touch input)" Tag="Blur" Click="Button_Click" Margin="40" FontSize="32" HorizontalAlignment="Center"/>
+        <Button Content="Gears" Tag="Gears" Click="Button_Click" Margin="50" FontSize="32" HorizontalAlignment="Center"/>
+        <Button Content="Lighting" Tag="Lighting" Click="Button_Click" Margin="50" FontSize="32" HorizontalAlignment="Center"/>
+        <Button Content="Blur" Tag="Blur" Click="Button_Click" Margin="50" FontSize="32" HorizontalAlignment="Center"/>
     </StackPanel>
 </Page>
