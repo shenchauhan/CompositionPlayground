@@ -9,5 +9,8 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Image x:Name="Image" Source="ms-appx:///Assets/canyon.jpg"  />
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="Back" Click="Back_Click" Width="80" VerticalAlignment="Top" Margin="10,10,0,0">Home</Button>
+        </StackPanel>
     </Grid>
 </Page>

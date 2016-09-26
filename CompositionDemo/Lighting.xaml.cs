@@ -34,7 +34,6 @@ namespace CompositionDemo
         private Compositor _compositor;
         private Visual _visual;
         private CompositionEffectFactory _effectFactory;
-        private CompositionSurfaceBrush _flatNormalsBrush;
         private PointLight _pointLight;
 
         public Lighting()
@@ -97,6 +96,14 @@ namespace CompositionDemo
         {
             var offset = e.GetCurrentPoint(this).Position.ToVector2();
             _pointLight.Offset = new Vector3(offset.X, offset.Y, 75);
+        }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            if (Frame.CanGoBack)
+            {
+                Frame.GoBack();
+            }
         }
     }
 }

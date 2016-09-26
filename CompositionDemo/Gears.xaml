@@ -9,6 +9,7 @@
 
     <Grid x:Name ="Root" Background="#36454F">
         <StackPanel Orientation="Horizontal">
+            <Button x:Name="Back" Click="Back_Click" Background="White" Width="80"  VerticalAlignment="Top" Margin="10,10,0,0">Home</Button>
             <Button x:Name="AnimateSlow" Click="AnimateSlow_Click" Background="White" Width="80"  VerticalAlignment="Top" Margin="10,10,0,0">Slow</Button>
             <Button x:Name="AnimateFast" Click="AnimateFast_Click" Background="White" Width="80"  VerticalAlignment="Top" Margin="10,10,0,0">Fast</Button>
             <Button x:Name="Stop" Click="Stop_Click" Background="White" Width="80"  VerticalAlignment="Top" Margin="10,10,0,0">Stop</Button>

@@ -32,6 +32,7 @@ namespace CompositionDemo
         private Visual _visual;
         private InteractionTracker _interactionTracker;
         private VisualInteractionSource _interactionSource;
+        private SpriteVisual _sprite;
 
         public Blur()
         {
@@ -96,17 +97,36 @@ namespace CompositionDemo
             var blurBrush = effectFactory.CreateBrush();
             blurBrush.SetSourceParameter("image", _compositor.CreateBackdropBrush());
 
-            var sprite = _compositor.CreateSpriteVisual();
-            sprite.Size = new Vector2((float)Window.Current.Bounds.Width, (float)Window.Current.Bounds.Height);
-            sprite.Brush = blurBrush;
+            _sprite = _compositor.CreateSpriteVisual();
+            _sprite.Size = new Vector2((float)Window.Current.Bounds.Width, (float)Window.Current.Bounds.Height);
+            _sprite.Brush = blurBrush;
 
             var blurAnimation = _compositor.CreateExpressionAnimation("lerp(tracker.MinScale, tracker.MaxScale, clamp(tracker.Position.X / width, 0, 1))");
             blurAnimation.SetReferenceParameter("tracker", _interactionTracker);
             blurAnimation.SetScalarParameter("width", (float)Window.Current.Bounds.Width);
 
-            sprite.Brush.Properties.StartAnimation("blurEffect.BlurAmount", blurAnimation);
+            _sprite.Brush.Properties.StartAnimation("blurEffect.BlurAmount", blurAnimation);
 
-            ElementCompositionPreview.SetElementChildVisual(Image, sprite);
+            ElementCompositionPreview.SetElementChildVisual(Image, _sprite);
+        }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            if (Frame.CanGoBack)
+            {
+                Frame.GoBack();
+            }
+        }
+
+        private void DoBlur_Click(object sender, RoutedEventArgs e)
+        {
+            var blurAnimation = _compositor.CreateScalarKeyFrameAnimation();
+            blurAnimation.Duration = TimeSpan.FromMilliseconds(2000);
+            blurAnimation.InsertKeyFrame(0.5f, 100f);
+            blurAnimation.InsertKeyFrame(1f, 0f);
+            blurAnimation.IterationBehavior = AnimationIterationBehavior.Forever;
+
+            _sprite.Brush.Properties.StartAnimation("blurEffect.BlurAmount", blurAnimation);
         }
     }
 }
